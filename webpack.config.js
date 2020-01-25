@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 const config = {
-  entry: './src/index.js',
+  entry: './src/index.jsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
@@ -16,19 +16,12 @@ const config = {
       },
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ],
+        use: ['style-loader', 'css-loader'],
         exclude: /\.module\.css$/
       },
       {
         test: /\.scss$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader'
-        ]
+        use: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
         test: /\.css$/,
@@ -51,10 +44,7 @@ const config = {
     ]
   },
   resolve: {
-    extensions: [
-      '.js',
-      '.jsx'
-    ],
+    extensions: ['.js', '.jsx']
   },
   devServer: {
     contentBase: './dist'
