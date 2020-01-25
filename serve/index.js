@@ -7,9 +7,17 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/', express.static(path.join(__dirname, '../dist')));
 var Mongo = require('../db/index');
 
-app.get('/data', (request, response) => {  
-    response.send('hello');
+app.get('/allData', (request, response) => {  
+    Mongo.allData((err,result)=>{
+        if(err){
+            response.send(err);
+        }else{
+            response.send(result);
+        }
+    })
 })
+
+
 
 
 var service = app.listen(8081, () => {

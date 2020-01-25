@@ -1,9 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./app";
-import "./styles.css";
-import "./styles.scss";
-
+import App from "./components/App/App";
+import './components/style.js'
 
 var mountNode = document.getElementById("app");
 ReactDOM.render(<App />, mountNode);
