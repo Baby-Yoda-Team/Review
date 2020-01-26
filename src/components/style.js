@@ -37,10 +37,15 @@ export const LineStyle = styled.div`
     margin-top: 50px;
   }
   .BolderTitle {
-    olor: #333;
+    color: #333;
     font-size: 20px;
     font-weight: 600;
     margin-top: 40px;
+  }
+  .BolderTitleNoTop {
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
   }
   .featuresTitle {
     font-size: 16px;
@@ -51,6 +56,23 @@ export const LineStyle = styled.div`
     line-height: 28px;
     border-bottom: 1px solid #333;
     padding-bottom: 30px;
+  }
+  .borderLine {
+    border-top: 1px solid #333;
+    padding-top: 30px;
+  }
+  .textBoxNoBorder {
+    margin-top: 10px;
+    line-height: 28px;
+    padding-bottom: 30px;
+  }
+  .bolderOnly {
+    margin-top: 0;
+    font-weight: bold;
+  }
+  .size {
+    font-size: 10px;
+    opacity: 0.6;
   }
 `;
 
@@ -102,7 +124,7 @@ export const MixPicAndTextLine = styled.div`
     flex-direction: row-reverse;
   }
   .textSide {
-    width: 50%;
+    width: 49%;
     .textTitle {
       ont-size: 16px;
       font-weight: bold;
@@ -114,18 +136,24 @@ export const MixPicAndTextLine = styled.div`
     }
   }
   .picSide {
-    width: 50%;
+    width: 49%;
     background-color: blue;
   }
 `;
 
-// export const TitleSize = styled.div`
-//   width: 100%;
-// `;
+export const UserManual = styled.div`
+  height: 110px;
+  display: flex;
+  .PDF {
+    min-width: 72px;
+    min-height: 72px;
+    background-color: pink;
+  }
+`;
 
-// export const TitleSize = styled.div`
-//   width: 100%;
-// `;
+export const Bottom = styled.div`
+  border-bottom: 1px solid #333;
+`;
 
 // export const TitleSize = styled.div`
 //   width: 100%;

@@ -10,7 +10,9 @@ import {
   ListBox,
   PicBox,
   MixPicAndText,
-  MixPicAndTextLine
+  MixPicAndTextLine,
+  UserManual,
+  Bottom
 } from '../style';
 
 class ProductDetails extends React.Component {
@@ -142,6 +144,45 @@ class ProductDetails extends React.Component {
               <div className="picSide">picSide</div>
             </MixPicAndTextLine>
           </MixPicAndText>
+          <LineStyle>
+            <div className="BolderTitle borderLine">Warranty</div>
+            <p>
+              We want to help you protect your investment. That’s why we try to go above and beyond
+              with our product warranties. The Z 1300i is protected with a Lifetime Frame & Motor
+              Warranty, 3-Year Parts Warranty, and 1-Year Labor Warranty. Please note: Lifetime
+              Warranty pertains to the lifetime of the original purchaser.
+            </p>
+            <div className="BolderTitle">Footprint</div>
+            <p>81"L x 37"W x 70”H</p>
+            <p className="BolderTitleNoTop">2.5” balanced rollers</p>
+            <div className="textBoxNoBorder">
+              We know that a quality product is all about the details. That’s why we’ve built the
+              NordicTrack Z 1300i with 2.5-inch precision-machined, balanced, non-flex rollers.
+              These rollers decrease tension, which keeps wear and tear to a minimum. You’ll also
+              notice less noise and better grip.
+            </div>
+          </LineStyle>
+          <LineStyle>
+            <span className="Bold">Warning: </span>
+            This product can expose you to chemicals including Phthalates and Toluene, which are
+            known to the State of California to cause cancer and birth defects or other reproductive
+            harm. For more information go to:
+            <ALink>www.P65Warnings.ca.gov</ALink>
+          </LineStyle>
+          <UserManual>
+            <img className="PDF" alt="PDF" src="" />
+            <div className="downLoad">
+              <LineStyle>
+                <p className="bolderOnly">User Manual</p>
+                <Switcher>
+                  <button>1</button>
+                  <button>1</button>
+                </Switcher>
+                <p className="size">PDF, 9.09 MB, 40 pages</p>
+              </LineStyle>
+            </div>
+          </UserManual>
+          <Bottom />
         </DetailsBody>
       </ProductDetailsBody>
     );
