@@ -90,9 +90,6 @@ export const MixPicAndText = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  :nthchild(even) {
-    background-color: green;
-  }
 `;
 
 export const MixPicAndTextLine = styled.div`
@@ -100,6 +97,10 @@ export const MixPicAndTextLine = styled.div`
   justify-content: space-between;
   box-sizing: border-box;
   margin-bottom: 40px;
+  &:nth-child(even) {
+    display: flex;
+    flex-direction: row-reverse;
+  }
   .textSide {
     width: 50%;
     .textTitle {
