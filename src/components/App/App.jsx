@@ -1,6 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
-import { Button, OutContainer, LeftContainer, RightContainer } from '../style';
+import { OutContainer, LeftContainer } from './style';
+import ProductDetails from '../ProductDetails/ProductDetails';
 
 class App extends React.Component {
   componentDidMount() {
@@ -21,7 +22,9 @@ class App extends React.Component {
     return (
       <>
         <OutContainer>
-          <LeftContainer> this left </LeftContainer>
+          <LeftContainer>
+            <ProductDetails />
+          </LeftContainer>
         </OutContainer>
       </>
     );
