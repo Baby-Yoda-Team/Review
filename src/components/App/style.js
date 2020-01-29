@@ -6,6 +6,6 @@ export const OutContainer = styled.div`
 `;
 export const LeftContainer = styled.div`
   width: 960px;
-  border-top: 1px solid gray;
+  border-top: 1px solid #ddd;
   margin-top: 10px;
 `;

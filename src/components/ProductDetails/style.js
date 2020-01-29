@@ -5,7 +5,7 @@ export const ProductDetailsBody = styled.div`
   width: 100%;
 
   .fade-entry {
-    transition: all 0.2s ease-out;
+    transition: opacity 0.1s ease-out;
   }
 
   .fade-enter-active {
@@ -22,12 +22,14 @@ export const ProductDetailsBody = styled.div`
 
   .fade-exit-active {
     opacity: 0;
-    transition: opacity 0.2s ease-in;
+    transition: opacity 0.1s ease-in;
   }
 
   .fade-exit-done {
     opacity: 0;
   }
+
+  border-bottom: 1px solid #ddd;
 `;
 
 export const Switcher = styled.div`
@@ -43,6 +45,11 @@ export const Switcher = styled.div`
 
 export const TinyBlock = styled.div`
   text-align: end;
+  &.plus {
+    cursor: pointer;
+    color: #0060a9;
+    font-size: 30px;
+  }
 `;
 
 export const Icon = styled.div`
@@ -81,7 +88,7 @@ export const LineStyle = styled.div`
   .textBox {
     margin-top: 10px;
     line-height: 28px;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #ddd;
     padding-bottom: 30px;
   }
   .borderLine {
@@ -121,11 +128,10 @@ export const PicBox = styled.div`
   margin: 0 auto;
   text-align: center;
   .pic {
-    width: 500px;
+    width: 770px;
     height: 500px;
     min-height: 500px;
     min-width: 500px;
-    background-color: red;
   }
 `;
 
@@ -140,6 +146,7 @@ export const MixPicAndTextLine = styled.div`
   justify-content: space-between;
   box-sizing: border-box;
   margin-bottom: 40px;
+  min-height: 260px;
   &:nth-child(even) {
     display: flex;
     flex-direction: row-reverse;
@@ -158,7 +165,6 @@ export const MixPicAndTextLine = styled.div`
   }
   .picSide {
     width: 49%;
-    background-color: blue;
   }
 `;
 

@@ -21,7 +21,7 @@ const repoSchema = mongoose.Schema({
   product_id: { type: Number, unique: true },
   product_name: String,
   Product_features: String,
-  product_main_description: String,
+  product_mainDescription: String,
   Product_url: String,
   Product_features_title: String,
   Product_features_des: String,
