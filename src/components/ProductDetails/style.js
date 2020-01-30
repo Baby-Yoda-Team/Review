@@ -184,20 +184,21 @@ export const Bottom = styled.div`
 `;
 
 export const Button = styled.button`
-  background: ${props => (props.primary ? 'palevioletred' : 'white')};
-  color: ${props => (props.primary ? 'white' : 'palevioletred')};
+  background: ${props => (props.normal ? '#fff' : 'white')};
+  color: ${props => (props.normal ? '#333' : 'palevioletred')};
+  height: ${props => (props.normal ? '45px' : null)};
+  width: ${props => (props.normal ? '70px' : null)};
+  font-weight: ${props => (props.normal ? 'bolder' : null)};
 
-  background: ${props => (props.danger ? 'red' : 'white')};
-  color: ${props => (props.primary ? 'white' : 'red')};
+  background: ${props => (props.blue ? '#407bae' : '#fff')};
+  color: ${props => (props.blue ? '#fff' : '#407bae')};
+  height: ${props => (props.blue ? '40px' : null)};
+  width: ${props => (props.blue ? '132px' : null)};
 
   margin-right: ${props => (props.rightDistance ? '10px' : '0')};
 
   font-size: 16px;
-  font-weight: bolder;
-  color: #333;
-  background-color: #fff;
-  height: 45px;
-  width: 70px;
+
   border-radius: 5px;
   outline: none;
   cursor: pointer;

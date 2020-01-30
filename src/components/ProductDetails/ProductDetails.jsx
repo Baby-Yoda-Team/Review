@@ -141,7 +141,9 @@ class ProductDetails extends React.Component {
                 <Lines>
                   <p className="bolderOnly">User Manual</p>
                   <Switcher>
-                    <Button rightDistance>view</Button>
+                    <Button normal rightDistance>
+                      view
+                    </Button>
                     <ALink as="a" bold href="http://www.google.com">
                       download
                     </ALink>

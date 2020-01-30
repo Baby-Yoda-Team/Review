@@ -3,6 +3,8 @@ import Axios from 'axios';
 import { OutContainer, LeftContainer } from './style';
 import ProductDetails from '../ProductDetails/ProductDetails';
 import Specifications from '../Specifications/Specifications';
+import Review from '../Review/Review';
+import ShippingAndReturns from '../ShippingAndReturns/ShippingAndReturns';
 
 class App extends React.Component {
   constructor() {
@@ -35,6 +37,8 @@ class App extends React.Component {
           <LeftContainer>
             <ProductDetails data={dataList} />
             <Specifications data={dataList} />
+            <Review data={dataList} />
+            <ShippingAndReturns data={dataList} />
           </LeftContainer>
         </OutContainer>
       </>

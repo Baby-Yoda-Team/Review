@@ -37,7 +37,8 @@ let repoSchema = mongoose.Schema({
       Product_features_des: String
     }
   ],
-  Specifications: Object
+  Specifications: Object,
+  Review: [Object]
 });
 
 var productData = [];
@@ -107,7 +108,74 @@ for (var i = 0; i < 100; i++) {
       Number_of_Programs: faker.random.number(),
       Running_Surface_Length: faker.random.number(),
       Running_Surface_Width: faker.random.number()
-    }
+    },
+    Review: [
+      {
+        Id: faker.random.uuid(),
+        Overall: faker.random.number(2),
+        UserImg: faker.image.avatar(),
+        UserName: faker.internet.userName(),
+        ago: faker.random.number(1),
+        reviewBody: faker.lorem.paragraphs(5),
+        recommend: faker.random.boolean(),
+        Helpful: {
+          Yes: faker.random.number(),
+          No: faker.random.number()
+        }
+      },
+      {
+        Id: faker.random.uuid(),
+        Overall: faker.random.number(2),
+        UserImg: faker.image.avatar(),
+        UserName: faker.internet.userName(),
+        ago: faker.random.number(1),
+        reviewBody: faker.lorem.paragraphs(5),
+        recommend: faker.random.boolean(),
+        Helpful: {
+          Yes: faker.random.number(),
+          No: faker.random.number()
+        }
+      },
+      {
+        Id: faker.random.uuid(),
+        Overall: faker.random.number(2),
+        UserImg: faker.image.avatar(),
+        UserName: faker.internet.userName(),
+        ago: faker.random.number(1),
+        reviewBody: faker.lorem.paragraphs(5),
+        recommend: faker.random.boolean(),
+        Helpful: {
+          Yes: faker.random.number(),
+          No: faker.random.number()
+        }
+      },
+      {
+        Id: faker.random.uuid(),
+        Overall: faker.random.number(2),
+        UserImg: faker.image.avatar(),
+        UserName: faker.internet.userName(),
+        ago: faker.random.number(100),
+        reviewBody: faker.lorem.paragraphs(5),
+        recommend: faker.random.boolean(),
+        Helpful: {
+          Yes: faker.random.number(),
+          No: faker.random.number()
+        }
+      },
+      {
+        Id: faker.random.uuid(),
+        Overall: faker.random.number(2),
+        UserImg: faker.image.avatar(),
+        UserName: faker.internet.userName(),
+        ago: faker.random.number(1),
+        reviewBody: faker.lorem.paragraphs(5),
+        recommend: faker.random.boolean(),
+        Helpful: {
+          Yes: faker.random.number(),
+          No: faker.random.number()
+        }
+      }
+    ]
   };
   productData.push(newProduct);
 }
@@ -132,7 +200,8 @@ let save = (userData, callback) => {
       Product_Warranty: userData[i].Product_Warranty,
       Product_Size: userData[i].Product_Size,
       Product_Last: userData[i].Product_Last,
-      Specifications: userData[i].Specifications
+      Specifications: userData[i].Specifications,
+      Review: userData[i].Review
     });
     gits.push(git);
   }
