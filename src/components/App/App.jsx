@@ -29,6 +29,10 @@ class App extends React.Component {
       });
   }
 
+  add(num1, num2) {
+    return num1 + num2;
+  }
+
   render() {
     const { dataList } = this.state;
     return (

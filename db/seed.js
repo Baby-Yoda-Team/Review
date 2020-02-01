@@ -1,8 +1,11 @@
 const mongoose = require('mongoose');
-var DB_URL = 'mongodb://127.0.0.1:27017/costco'; /** * mongoDb Url */
+
+const DB_URL = 'mongodb://127.0.0.1:27017/costco'; /** * mongoDb Url */
 mongoose.connect(DB_URL);
-var db = mongoose.connection;
-var faker = require('faker');
+const db = mongoose.connection;
+
+const faker = require('faker');
+
 db.on('open', function() {
   // connection success
   console.log('MongoDB Connection Successed');
@@ -13,8 +16,8 @@ db.on('error', function() {
   console.log('MongoDB Connection Error');
 });
 
-let repoSchema = mongoose.Schema({
-  //Step1: Create database schema
+const repoSchema = mongoose.Schema({
+  // Step1: Create database schema
   product_id: { type: Number, unique: true },
   product_name: String,
   Product_features: String,
@@ -41,10 +44,10 @@ let repoSchema = mongoose.Schema({
   Review: [Object]
 });
 
-var productData = [];
-for (var i = 0; i < 100; i++) {
-  //Step2: use faker to  create 100 fake data, and push it to productData
-  let newProduct = {
+const productData = [];
+for (let i = 0; i < 100; i + 1) {
+  // Step2: use faker to  create 100 fake data, and push it to productData
+  const newProduct = {
     product_id: i,
     product_name: faker.commerce.productName(),
     Product_features: faker.lorem.words(8),
@@ -179,14 +182,13 @@ for (var i = 0; i < 100; i++) {
   };
   productData.push(newProduct);
 }
-console.log(productData);
 
-var ReviewDetail = mongoose.model('reviewDetail', repoSchema);
+const ReviewDetail = mongoose.model('reviewDetail', repoSchema);
 
-let save = (userData, callback) => {
-  var gits = new Array();
-  for (i = 0; i < userData.length; i++) {
-    let git = new ReviewDetail({
+const save = (userData, callback) => {
+  const gits = new Array();
+  for (let i = 0; i < userData.length; i + 1) {
+    const git = new ReviewDetail({
       product_id: userData[i].product_id,
       product_name: userData[i].product_name,
       Product_features: userData[i].Product_features,

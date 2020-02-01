@@ -40,6 +40,12 @@ const config = {
       {
         test: /\.svg$/,
         use: 'file-loader'
+      },
+      {
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env', '@babel/preset-react']
+        }
       }
     ]
   },
