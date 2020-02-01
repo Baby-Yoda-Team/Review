@@ -16,17 +16,32 @@ db.on('error', () => {
   console.log('MongoDB Connection Error');
 });
 
-const repoSchema = mongoose.Schema({
-  // Step1: Create database schema
+let repoSchema = mongoose.Schema({
+  //Step1: Create database schema
   product_id: { type: Number, unique: true },
   product_name: String,
   Product_features: String,
-  product_mainDescription: String,
+  product_main_description: String,
   Product_url: String,
   Product_features_title: String,
   Product_features_des: String,
   Product_features_list: [String],
-  Product_features_smallPic: String
+  Product_features_smallPic: String,
+  Product_features_detial: [Object],
+  Product_Warranty: String,
+  Product_Size: {
+    Long: Number,
+    Width: Number,
+    Height: Number
+  },
+  Product_Last: [
+    {
+      Product_features_title: String,
+      Product_features_des: String
+    }
+  ],
+  Specifications: Object,
+  Review: [Object]
 });
 
 const ReviewDetail = mongoose.model('reviewDetail', repoSchema);
