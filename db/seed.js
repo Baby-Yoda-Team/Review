@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const DB_URL = 'mongodb://127.0.0.1:27017/costco'; /** * mongoDb Url */
+const DB_URL = 'mongodb://127.0.0.1:27017/costcoReview'; /** * mongoDb Url */
 
 mongoose.connect(DB_URL);
 const db = mongoose.connection;
