@@ -177,12 +177,6 @@ export const UserManual = styled.div`
   }
 `;
 
-export const Bottom = styled.div`
-  border-bottom: 1px solid #333;
-  margin-top: 30px;
-  opacity: 0.6;
-`;
-
 export const Button = styled.button`
   background: ${props => (props.normal ? '#fff' : 'white')};
   color: ${props => (props.normal ? '#333' : 'palevioletred')};
