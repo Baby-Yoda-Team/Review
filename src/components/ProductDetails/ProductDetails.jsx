@@ -14,7 +14,6 @@ import {
   MixPicAndTextLine,
   UserManual,
   Button,
-  Bottom,
   Lines
 } from './style';
 
@@ -93,7 +92,7 @@ class ProductDetails extends React.Component {
             <MixPicAndText>
               {detial.map((item, index) => {
                 return (
-                  <MixPicAndTextLine>
+                  <MixPicAndTextLine key={index}>
                     <div className="textSide">
                       <div className="textTitle">{item.Product_features}</div>
                       <div className="textBox">{item.Product_main_description}</div>
@@ -152,7 +151,6 @@ class ProductDetails extends React.Component {
                 </Lines>
               </div>
             </UserManual>
-            <Bottom />
           </DetailsBody>
         </CSSTransition>
       </ProductDetailsBody>

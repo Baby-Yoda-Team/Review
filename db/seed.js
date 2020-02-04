@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const DB_URL = 'mongodb://127.0.0.1:27017/costco'; /** * mongoDb Url */
+
 mongoose.connect(DB_URL);
 const db = mongoose.connection;
 
@@ -40,12 +41,11 @@ const repoSchema = mongoose.Schema({
       Product_features_des: String
     }
   ],
-  Specifications: Object,
-  Review: [Object]
+  Specifications: Object
 });
 
 const productData = [];
-for (let i = 0; i < 100; i + 1) {
+for (let i = 0; i < 100; i += 1) {
   // Step2: use faker to  create 100 fake data, and push it to productData
   const newProduct = {
     product_id: i,
@@ -111,83 +111,17 @@ for (let i = 0; i < 100; i + 1) {
       Number_of_Programs: faker.random.number(),
       Running_Surface_Length: faker.random.number(),
       Running_Surface_Width: faker.random.number()
-    },
-    Review: [
-      {
-        Id: faker.random.uuid(),
-        Overall: faker.random.number(2),
-        UserImg: faker.image.avatar(),
-        UserName: faker.internet.userName(),
-        ago: faker.random.number(1),
-        reviewBody: faker.lorem.paragraphs(5),
-        recommend: faker.random.boolean(),
-        Helpful: {
-          Yes: faker.random.number(),
-          No: faker.random.number()
-        }
-      },
-      {
-        Id: faker.random.uuid(),
-        Overall: faker.random.number(2),
-        UserImg: faker.image.avatar(),
-        UserName: faker.internet.userName(),
-        ago: faker.random.number(1),
-        reviewBody: faker.lorem.paragraphs(5),
-        recommend: faker.random.boolean(),
-        Helpful: {
-          Yes: faker.random.number(),
-          No: faker.random.number()
-        }
-      },
-      {
-        Id: faker.random.uuid(),
-        Overall: faker.random.number(2),
-        UserImg: faker.image.avatar(),
-        UserName: faker.internet.userName(),
-        ago: faker.random.number(1),
-        reviewBody: faker.lorem.paragraphs(5),
-        recommend: faker.random.boolean(),
-        Helpful: {
-          Yes: faker.random.number(),
-          No: faker.random.number()
-        }
-      },
-      {
-        Id: faker.random.uuid(),
-        Overall: faker.random.number(2),
-        UserImg: faker.image.avatar(),
-        UserName: faker.internet.userName(),
-        ago: faker.random.number(100),
-        reviewBody: faker.lorem.paragraphs(5),
-        recommend: faker.random.boolean(),
-        Helpful: {
-          Yes: faker.random.number(),
-          No: faker.random.number()
-        }
-      },
-      {
-        Id: faker.random.uuid(),
-        Overall: faker.random.number(2),
-        UserImg: faker.image.avatar(),
-        UserName: faker.internet.userName(),
-        ago: faker.random.number(1),
-        reviewBody: faker.lorem.paragraphs(5),
-        recommend: faker.random.boolean(),
-        Helpful: {
-          Yes: faker.random.number(),
-          No: faker.random.number()
-        }
-      }
-    ]
+    }
   };
   productData.push(newProduct);
 }
+console.log(productData);
 
 const ReviewDetail = mongoose.model('reviewDetail', repoSchema);
 
 const save = (userData, callback) => {
-  const gits = new Array();
-  for (let i = 0; i < userData.length; i + 1) {
+  const gits = [];
+  for (let i = 0; i < userData.length; i += 1) {
     const git = new ReviewDetail({
       product_id: userData[i].product_id,
       product_name: userData[i].product_name,
@@ -202,8 +136,7 @@ const save = (userData, callback) => {
       Product_Warranty: userData[i].Product_Warranty,
       Product_Size: userData[i].Product_Size,
       Product_Last: userData[i].Product_Last,
-      Specifications: userData[i].Specifications,
-      Review: userData[i].Review
+      Specifications: userData[i].Specifications
     });
     gits.push(git);
   }
@@ -220,6 +153,6 @@ save(productData, (err, result) => {
   if (err) {
     console.log(err);
   } else {
-    console.log('seeding success:' + result);
+    console.log('seeding success: ' + result);
   }
 });
