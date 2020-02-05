@@ -6,6 +6,8 @@ import Specifications from '../Specifications/Specifications';
 import Review from '../Review/Review';
 import ShippingAndReturns from '../ShippingAndReturns/ShippingAndReturns';
 
+const orUrl = 'http://localhost:8081/allData';
+
 class App extends React.Component {
   constructor() {
     super();
@@ -18,7 +20,7 @@ class App extends React.Component {
 
   getData() {
     const x = Math.ceil(Math.random() * 100);
-    Axios.get('/allData')
+    Axios.get(orUrl)
       .then(response => {
         this.setState(() => {
           return { dataList: response.data[x] };
@@ -27,10 +29,6 @@ class App extends React.Component {
       .catch(function(error) {
         console.log(error);
       });
-  }
-
-  add(num1, num2) {
-    return num1 + num2;
   }
 
   render() {
