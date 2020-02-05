@@ -4,5 +4,5 @@ import ReactDOM from 'react-dom';
 import App from './components/App/App.jsx';
 
 // eslint-disable-next-line no-undef
-const mountNode = document.getElementById('app');
+const mountNode = document.getElementById('review');
 ReactDOM.render(<App />, mountNode);
