@@ -6,12 +6,19 @@ import Specifications from '../Specifications/Specifications';
 import Review from '../Review/Review';
 import ShippingAndReturns from '../ShippingAndReturns/ShippingAndReturns';
 
-const orUrl = 'http://localhost:8081/allData';
+const port = 8081;
+
+const url = `http://localhost:${port}`;
+
+const params = new URLSearchParams(window.location.search);
 
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      itemNumber: params.get('item_number'),
+      dataObject: {}
+    };
   }
 
   componentDidMount() {
@@ -19,28 +26,29 @@ class App extends React.Component {
   }
 
   getData() {
+    const { itemNumber } = this.state;
     const x = Math.ceil(Math.random() * 100);
-    Axios.get(orUrl)
+    Axios.get(`/api?item_number=${itemNumber || x}`)
       .then(response => {
         this.setState(() => {
-          return { dataList: response.data[x] };
+          return { dataObject: response.data };
         });
       })
-      .catch(function(error) {
+      .catch(error => {
         console.log(error);
       });
   }
 
   render() {
-    const { dataList } = this.state;
+    const { dataObject } = this.state;
     return (
       <>
         <OutContainer>
           <LeftContainer>
-            <ProductDetails data={dataList} />
-            <Specifications data={dataList} />
-            <Review data={dataList} />
-            <ShippingAndReturns data={dataList} />
+            <ProductDetails data={dataObject} />
+            <Specifications data={dataObject} />
+            <Review data={dataObject} />
+            <ShippingAndReturns data={dataObject} />
           </LeftContainer>
         </OutContainer>
       </>

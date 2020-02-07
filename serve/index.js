@@ -22,14 +22,25 @@ app.use(bodyParser.json()); // conveart to json file
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/', express.static(path.join(__dirname, '../dist')));
 
-app.get('/allData', (request, response) => {
-  Mongo.allData((err, result) => {
-    if (err) {
-      response.send(err);
-    } else {
-      response.send(result);
-    }
-  });
+app.get('/api', (request, response) => {
+  const param = request.query.item_number;
+  if (param === undefined) {
+    Mongo.allData(1, (err, result) => {
+      if (err) {
+        response.send(err);
+      } else {
+        response.send(result);
+      }
+    });
+  } else {
+    Mongo.allData(param, (err, result) => {
+      if (err) {
+        response.send(err);
+      } else {
+        response.send(result);
+      }
+    });
+  }
 });
 
 app.listen(port, () => console.log(`listening on port ${port}!`));

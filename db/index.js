@@ -17,7 +17,7 @@ db.on('error', () => {
 });
 
 let repoSchema = mongoose.Schema({
-  //Step1: Create database schema
+  // Step1: Create database schema
   product_id: { type: Number, unique: true },
   product_name: String,
   Product_features: String,
@@ -46,8 +46,11 @@ let repoSchema = mongoose.Schema({
 
 const ReviewDetail = mongoose.model('reviewDetail', repoSchema);
 
-const allData = callback => {
-  ReviewDetail.find().exec((err, result) => {
+const allData = (query, callback) => {
+  console.log(query);
+  const ID = { product_id: query };
+
+  ReviewDetail.findOne(ID).exec((err, result) => {
     if (err) {
       callback(err);
     } else {
