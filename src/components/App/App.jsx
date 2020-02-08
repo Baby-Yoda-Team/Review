@@ -10,6 +10,8 @@ const port = 8081;
 
 const url = `http://localhost:${port}`;
 
+const Ec2 = 'http://ec2-13-112-188-88.ap-northeast-1.compute.amazonaws.com/';
+
 const params = new URLSearchParams(window.location.search);
 
 class App extends React.Component {
@@ -28,7 +30,7 @@ class App extends React.Component {
   getData() {
     const { itemNumber } = this.state;
     const x = Math.ceil(Math.random() * 100);
-    Axios.get(`/api?item_number=${itemNumber || x}`)
+    Axios.get(`${Ec2}api?item_number=${itemNumber || x}`)
       .then(response => {
         this.setState(() => {
           return { dataObject: response.data };
