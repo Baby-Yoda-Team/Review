@@ -10,7 +10,7 @@ const port = 8081;
 
 const url = `http://localhost:${port}`;
 
-const Ec2 = 'http://ec2-13-112-188-88.ap-northeast-1.compute.amazonaws.com/';
+const Ec2 = 'http://ec2-13-112-188-88.ap-northeast-1.compute.amazonaws.com:8081/';
 
 const params = new URLSearchParams(window.location.search);
 

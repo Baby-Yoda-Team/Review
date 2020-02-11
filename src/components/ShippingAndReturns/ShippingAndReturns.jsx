@@ -1,7 +1,7 @@
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { ProductDetailsBody, Switcher, TinyBlock } from '../ProductDetails/style';
-import { Lines, Bolder, Blue, LargeBolder, ALink, ShippingSection } from './style';
+import { Lines, Bolder, Blue, LargeBolder, ALink, ShippingSection } from './style.js';
 
 class ShippingAndReturns extends React.Component {
   constructor(props) {

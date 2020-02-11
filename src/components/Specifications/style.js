@@ -11,6 +11,7 @@ export const LineBody = styled.ol`
 
 export const Lines = styled.li`
   list-style: none;
+  width: 40%;
   display: flex;
   justify-content: unset;
   flex-direction: row;
@@ -18,7 +19,8 @@ export const Lines = styled.li`
 `;
 
 export const LeftSide = styled.div`
-  width: 40%;
+  color: green;
+
   line-height: 40px;
   height: 40px;
 `;

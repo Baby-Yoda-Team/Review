@@ -15,7 +15,7 @@ import {
   ReviewLines,
   BlueCh,
   ButtonLines
-} from './style';
+} from './style.js';
 
 class Review extends React.Component {
   constructor(props) {

@@ -15,7 +15,7 @@ import {
   UserManual,
   Button,
   Lines
-} from './style';
+} from './style.js';
 
 class ProductDetails extends React.Component {
   constructor(props) {

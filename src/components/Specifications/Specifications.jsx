@@ -1,7 +1,7 @@
 import React from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { ProductDetailsBody, Switcher, TinyBlock } from '../ProductDetails/style';
-import { LineBody, Lines, LeftSide, RightSide } from './style';
+import { LineBody, Lines, LeftSide, RightSide } from './style.js';
 
 class Specifications extends React.Component {
   constructor(props) {
